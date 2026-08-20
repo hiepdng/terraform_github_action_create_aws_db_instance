@@ -51,6 +51,7 @@ resource "aws_db_instance" "mysql_server" {
   vpc_security_group_ids = [aws_security_group.mysql_sg.id]
   publicly_accessible    = false         # Set to false if you only want internal AWS network traffic
   skip_final_snapshot    = true          # Skips backup snapshot when running 'terraform destroy'
+  deletion_protection = false            # Set to false to allow deletion
 
   tags = {
     Environment = "Development"
