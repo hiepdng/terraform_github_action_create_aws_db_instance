@@ -38,7 +38,7 @@ resource "aws_security_group" "mysql_sg" {
 # 3. Provision the AWS RDS MySQL Instance
 resource "aws_db_instance" "mysql_server" {
   identifier           = "my-mysql-rds-server"
-  allocated_storage    = 1                # Storage size in Gigabytes
+  allocated_storage    = 20               # Storage size in Gigabytes
   storage_type         = "gp3"            # General Purpose SSD
   engine               = "mysql"          # Database engine type
   engine_version       = "8.0"            # Major MySQL version
