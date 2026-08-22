@@ -1,13 +1,9 @@
 name: Terraform create AWS DB instance
 
 on: 
-  #push: 
   workflow_dispatch: 
     branches:
       - main
-  #pull_request:
-  #  branches:
-  #    - main
 
 jobs:
   terraform:
@@ -36,6 +32,5 @@ jobs:
       - name: Terraform Plan
         run: terraform plan
 
-      #- name: Terraform Apply
-      #  #if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-      #  run: terraform apply -auto-approve
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
